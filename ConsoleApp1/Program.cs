@@ -131,3 +131,101 @@
 //Console.ReadKey();
 
 
+// 디버깅 단축키
+// 디버깅 시작 단축키 F5
+// 중단점 단축키 F9
+// 한 단계씩 실행 단축키 F10
+// 함수 안으로 들어가기 단축키 F11
+// 함수 밖으로 나오기 Shift + F11
+// 디버깅 다시 시작 Ctrl + Shift + F5
+
+
+
+// 전반적인 if 삼항 등 JAVA와 비슷한거같음
+
+
+// input 
+
+//Console.Write("숫자 입력 : ");
+//string? input = Console.ReadLine();
+
+//int num = int.Parse(input ?? "0"); // null 병합 연산자 사용
+
+//Console.WriteLine("입력한 숫자 : " + input);
+//if (num == 0)
+//{
+//    Console.WriteLine("0입니다.");
+//}
+//else if(num % 2 != 0)
+//{
+//    Console.WriteLine("입력한 숫자는 홀수입니다.");
+//}
+//else if (num % 2 == 0)
+//{
+//    Console.WriteLine("입력한 숫자는 짝수입니다.");
+//}
+
+//Console.ReadKey();
+
+// switch case
+
+// JAVA 와 동일
+
+//string grade = "A";
+//string grade2 = "D";
+
+//switch (grade)
+//{
+//    case "A":
+//        Console.WriteLine("우수 회원입니다.");
+//        break;
+//    case "B":
+//        Console.WriteLine("일반 회원입니다.");
+//        break;
+//    case "C":
+//        Console.WriteLine("준회원입니다.");
+//        break;
+//    case string g when (g == "D" || g == "F"): // 비교 연산자 사용 가능
+//        Console.WriteLine("탈퇴 회원입니다.");
+//        break;
+//    default:
+//        Console.WriteLine("손님입니다.");
+//        break;
+//}
+
+//string message = grade2 switch
+//{
+//    "A" => "우수 회원입니다.",
+//    "B" => "일반 회원입니다.",
+//    "C" => "준회원입니다.",
+//    "D" or "F" => "탈퇴 회원입니다.", // or 연산자 사용 가능
+//    _ => "손님입니다."
+//}; // switch 표현식
+
+//Console.WriteLine(message);
+//Console.ReadKey();
+
+
+// 배열
+// 이것도 뭐 비슷할거같음
+
+int[] numbers = new int[5]; // 길이가 5인 정수형 배열 선언
+string[] fruits = new string[5]; // 길이가 5인 문자열형 배열 선언
+
+// numbers = [0, 0, 0, 0, 0]
+// fruits = [null, null, null, null, null]
+
+numbers = new int[] {10, 20, 30, 40, 50 }; // 배열 초기화
+fruits = ["사과", "바나나", "레몬", "포도"]; // 배열 초기화 C# 9.0
+
+// 요소 접근
+numbers[0] = 100; // 첫 번째 요소에 값 할당
+Console.WriteLine("첫 번째 숫자: " + numbers[0]);
+Console.WriteLine("두 번째 과일: " + fruits[1]);
+
+// C# 8.0 ^ 연산자
+fruits[fruits.Length - 1] = "오렌지"; // 마지막 요소에 값 할당
+Console.WriteLine("마지막 과일 : " + fruits[^1]);
+Console.WriteLine("뒤에서 두번째 과일 : " + fruits[^2]); // 끝에서 두 번째 요소 접근)
+
+Console.ReadKey();
