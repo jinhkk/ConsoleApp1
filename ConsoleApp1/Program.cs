@@ -209,23 +209,116 @@
 // 배열
 // 이것도 뭐 비슷할거같음
 
-int[] numbers = new int[5]; // 길이가 5인 정수형 배열 선언
-string[] fruits = new string[5]; // 길이가 5인 문자열형 배열 선언
+//int[] numbers = new int[5]; // 길이가 5인 정수형 배열 선언
+//string[] fruits = new string[5]; // 길이가 5인 문자열형 배열 선언
 
-// numbers = [0, 0, 0, 0, 0]
-// fruits = [null, null, null, null, null]
+//// numbers = [0, 0, 0, 0, 0]
+//// fruits = [null, null, null, null, null]
 
-numbers = new int[] {10, 20, 30, 40, 50 }; // 배열 초기화
-fruits = ["사과", "바나나", "레몬", "포도"]; // 배열 초기화 C# 9.0
+//numbers = new int[] {10, 20, 30, 40, 50 }; // 배열 초기화
+//fruits = ["사과", "바나나", "레몬", "포도"]; // 배열 초기화 C# 9.0
 
-// 요소 접근
-numbers[0] = 100; // 첫 번째 요소에 값 할당
-Console.WriteLine("첫 번째 숫자: " + numbers[0]);
-Console.WriteLine("두 번째 과일: " + fruits[1]);
+//// 요소 접근
+//numbers[0] = 100; // 첫 번째 요소에 값 할당
+//Console.WriteLine("첫 번째 숫자: " + numbers[0]);
+//Console.WriteLine("두 번째 과일: " + fruits[1]);
 
-// C# 8.0 ^ 연산자
-fruits[fruits.Length - 1] = "오렌지"; // 마지막 요소에 값 할당
-Console.WriteLine("마지막 과일 : " + fruits[^1]);
-Console.WriteLine("뒤에서 두번째 과일 : " + fruits[^2]); // 끝에서 두 번째 요소 접근)
+//// C# 8.0 ^ 연산자
+//fruits[fruits.Length - 1] = "오렌지"; // 마지막 요소에 값 할당
+//Console.WriteLine("마지막 과일 : " + fruits[^1]);
+//Console.WriteLine("뒤에서 두번째 과일 : " + fruits[^2]); // 끝에서 두 번째 요소 접근)
 
+//Console.ReadKey();
+
+// 반복문
+
+// 전반적인 반복문은 JAVA와 비슷하나 다른게 있음
+
+//int[] numbers = { 10, 20, 30, 40, 50 };
+
+//for(int i = 0; i < numbers.Length; i++) // Length 속성 (JAVA의 length() 메서드와 비슷)
+//{
+//    Console.WriteLine("numbers[" + i + "] = " + numbers[i]);
+//}
+
+//foreach(int num in numbers)
+//{
+//    Console.WriteLine("num : " + num);
+//}
+
+// 다차원 배열
+
+//int[,] matrix = new int[2, 3]; // 2행 3열 배열
+
+//int[,] matrix2 = { 
+//    { 1, 2, 3 }, 
+//    { 4, 5, 6 }
+//}; // 배열 초기화 
+
+//Console.WriteLine(matrix2[1, 1]);
+
+//Console.WriteLine(matrix2.GetLength(0));
+//Console.WriteLine(matrix2.GetLength(1));
+
+//for(int i = 0; i < matrix2.GetLength(0); i ++)
+//{
+//    for(int j = 0; j < matrix2.GetLength(1); j++)
+//    {
+//        Console.Write(matrix2[i, j] + " ");
+//    }
+//    Console.WriteLine();
+//}
+
+// 가변 배열 선언(각 배열의 크기가 다를 수 있음)
+//int[][] jaggedArray = new int[3][];
+
+//// 각 행에 다른 크기의 배열을 할당
+//jaggedArray[0] = new int[] { 1, 2 };
+//jaggedArray[1] = new int[] { 3, 4, 5 };
+//jaggedArray[2] = new int[] { 6, 7, 8, 9 };
+
+//int[][] jaggedArray2 =
+//{
+//    [1, 2],
+//    [3, 4, 5],
+//    [6, 7, 8, 9]
+//};
+
+////Console.WriteLine(jaggedArray[2][3]); // 9
+
+
+//foreach (int[]array in jaggedArray2)
+//{
+//    foreach(int item in array)
+//    {
+//        Console.Write(item + " ");
+//    }
+//    Console.WriteLine();
+//}
+
+
+//int[] numbers = { 5, 3, 4, 7, 8, 1, 2, 6 };
+//Array.Sort(numbers); // 배열 정렬
+//Array.Reverse(numbers); // 배열 역순 정렬
+
+//Console.WriteLine("정렬된 배열");
+
+//foreach(int num in numbers)
+//{
+//    Console.Write(num + " ");
+//}
+
+//int[] numbers = { 1, 2, 3, 4, 5 };
+//int index = Array.IndexOf(numbers, 1);  // indexOf : 1의 위치를 numbers 배열에서 찾음
+// index 크기를 벗어나면 -1 반환
+//Console.Write(index);
+
+int[] numbers = { 1, 2, 3 };
+Array.Resize(ref numbers, 5); // 배열 크기 변경 (참조로 전달 즉, 원본의 변경을 야기함)
+Console.WriteLine(numbers.Length); // 5
+Console.WriteLine("************");
+foreach (int num in numbers)
+{
+    Console.Write(num + " ");
+}
 Console.ReadKey();
