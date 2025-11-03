@@ -56,10 +56,78 @@
 
 
 // 명시적 선언 (Explicit Declaration)
+//int number;  // 선언을 할 때 자료형을 명시적으로 지정
+//string test = "Hello";
+//double d = 3.14;
+//Dictionary<string, List<Tuple<int, string>>> complexDict = new Dictionary<string, List<Tuple<int, string>>>();
 
-// 암시적 선언 (Implicit Declaration)
+//// 암시적 선언 (Implicit Declaration)
+//var number2 = 10; // 선언을 할 때 자료형을 명시하지 않지만 값을 반드시 초기화 해줘야 함
+//var test2 = "World";
+//var d2 = 3.14;
+//var complexDict2 = new Dictionary<string, List<Tuple<int, string>>>();
+
+//Console.ReadKey();
+
+// 비트 연산자
+
+//int a = 192; // 11000000
+//int b = 168; // 10101000
+//// 비트 연산자 예제    
+////           And 10000000 = 128
+////           Or  11101000 = 232
+////           Xor 01101000 = 104
+
+//Console.WriteLine("a & b = " + (a & b));   // 비트 AND
+//Console.WriteLine("a | b = " + (a | b));   // 비트 OR
+//Console.WriteLine("a ^ b = " + (a ^ b));   // 비트 XOR
+
+//// a = 00000000 00000000 00000000 11000000
+//// ~a = 11111111 11111111 11111111 00111111 1의 보수
+
+//// 1의 보수, 2의 보수
+//// 11111111 11111111 11111111 00111111
+//// 1의 보수
+//// 00000000 00000000 00000000 11000000
+//// 2의 보수
+//// 00000000 00000000 00000000 11000001 = -63
+
+//// ~a = -193
+//Console.WriteLine("~a = " + (~a));         // 비트 NOT
+
+//// a = 00000000 00000000 00000000 11000000
+
+//Console.WriteLine("a << 2 = " + (a << 2));
+//// a << 2 = 00000000 00000000 00000011 00000000 = 768 비트 왼쪽 시프트
+
+//Console.WriteLine("a << 2 = " + (a >> 2));
+//// a >> 2 = 00000000 00000000 00000000 00110000 = 48 비트 오른쪽 시프트
+//Console.ReadKey();
+
+//byte b = 5;
+
+//// b = 0000 0101
+
+//Console.WriteLine($"~b = {~b}");
+//// ~b = 1111 1010 = -6
+//Console.ReadKey();
 
 
+// Null 병합 연산자
 
-Console.ReadKey();
+//Nullable<int> a = null;
+//int? a = null;  // 위의 선언과 동일
+//// 즉 선언할 때 Type 뒤에 ?를 붙이면 Nullable<T> 타입으로 선언됨
+
+//// Nullable 체크 해보기
+//Console.WriteLine($"a.HasValue = {a.HasValue}"); // false
+
+//int b = a ?? 10; // a가 null이면 10을 대입
+
+//int? b2 = 5;
+
+//a ??= b2; // a가 null이면 b2의 값을 대입
+
+//Console.ReadKey();
+
 
