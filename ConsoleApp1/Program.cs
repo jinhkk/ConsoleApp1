@@ -422,12 +422,85 @@
 //dog.Eat();
 
 
-IAnimal dog2 = new Dog2();  
-IAnimal bird = new Bird();
-IFlyable bird2 = new Bird();
+//IAnimal dog2 = new Dog2();  
+//IAnimal bird = new Bird();
+//IFlyable bird2 = new Bird();
 
-dog2.MakeSound();  
-bird.MakeSound();
-bird2.Fly();
+//dog2.MakeSound();  
+//bird.MakeSound();
+//bird2.Fly();
 
+// 암시적 변환, 명시적 변환
+
+//int intNum = 100;
+//double doubleNum = intNum; // 암시적 변환
+//Console.WriteLine($"int : {intNum}, double : {doubleNum}");
+
+//double anotherDouble = 9.78;
+//int anotherInt = (int)anotherDouble; // 명시적 변환
+//Console.WriteLine($"double : {anotherDouble}, int : {anotherInt}");
+
+//// 암시적 변환 : 작은 범위의 자료형에서 큰 범위의 자료형으로 변환될 때 자동으로 수행
+//// 명시적 변환 : 큰 범위의 자료형에서 작은 범위의 자료형으로 변환될 때 개발자가 직접 형변환을 지정해야 함
+
+
+// object 타입
+
+//object stringObject = "C# Programming"; 
+//object intObject = 42;
+//object doubleObject = 3.14; 
+//object doubleObject2 = 9.78;
+//object boolObject = true;
+//object classObject = new Person("홍길동");
+
+// as 연산자
+
+//object obj = "Hello, World!";
+//string? str = obj as string;
+
+//if (str != null)
+//{
+//    Console.WriteLine("문자열 길이: " + str.Length);
+//}
+//else
+//{
+//    Console.WriteLine("obj는 문자열이 아닙니다.");
+//}
+
+
+// Convert 클래스
+//string strNumber = "789";
+//int cvt = Convert.ToInt32(strNumber); // 32 비트의 정수 즉 int형으로 변환
+//Console.WriteLine($"변환된 정수: {cvt}");
+
+
+// 구조체
+// 특징     구조체(sturct)        클래스(class)
+// 타입    값 형식               참조 형식
+// 메모리  스택에 할당           힙에 할당
+// 상속    불가능                가능
+// 용도    간단한 데이터 그룹화   복잡한 데이터 및 동작 포함
+
+Point point = new Point {  X = 10, Y = 20 };
+
+void ChangePoint(Point p)
+{
+    p.X = 30;
+    p.Y = 40;
+}
+
+ChangePoint(point);
+
+Console.WriteLine(point);
 Console.ReadKey();
+struct Point
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public override string? ToString()
+    {
+        return $"X : {X}, Y: {Y}";
+    }
+}
+
