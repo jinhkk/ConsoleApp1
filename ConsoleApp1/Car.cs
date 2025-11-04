@@ -55,8 +55,8 @@ namespace ConsoleApp1
             this.color = color;
         }
 
-        public Car(string brand, string model, string color = "파랑") // color는 기본값이 설정되어있어 생략가능
-        {
+        public Car(string brand, string model, string color = "파랑") 
+        {// color는 기본값이 설정되어있어 생략가능
             this.brand = brand;
             this.model = model;
             this.color = color;

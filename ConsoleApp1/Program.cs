@@ -1,4 +1,7 @@
-﻿//bool isTrue = true;
+﻿using ConsoleApp1;
+
+
+//bool isTrue = true;
 //char character = 'A';
 //char[] chars = {'i', 's', 'T', 'r', 'u', 'e'};
 //string str = new string(chars); // 형변환 ( 문자 배열 -> 문자열 )
@@ -384,12 +387,47 @@
 //    Console.WriteLine("변환 실패");
 //}
 
-using ConsoleApp1;
+//using ConsoleApp1;
 
-Person ps1 = new Person();
-ps1.Name = "홍길동";
+//Person ps1 = new Person();
+//ps1.Name = "홍길동";
 
-// getter, setter 가 자동으로 생성되어서 아래처럼 사용 가능
-Console.WriteLine(ps1.Name);
+//// getter, setter 가 자동으로 생성되어서 아래처럼 사용 가능
+//Console.WriteLine(ps1.Name);
+
+
+
+
+
+//using ConsoleApp1;
+
+//Person person = new Person();
+
+//person.Name = "홍길동"; 
+//Console.WriteLine(person.GetName());
+
+
+//void Test()
+//{
+//    for (int i = 0; i < 1000000; i++)
+//    {
+//        new myClass(i);
+//    }
+//}
+
+//Test();
+
+//Animal dog = new Dog();
+
+//dog.Eat();
+
+
+IAnimal dog2 = new Dog2();  
+IAnimal bird = new Bird();
+IFlyable bird2 = new Bird();
+
+dog2.MakeSound();  
+bird.MakeSound();
+bird2.Fly();
 
 Console.ReadKey();
