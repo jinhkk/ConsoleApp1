@@ -313,12 +313,83 @@
 // index 크기를 벗어나면 -1 반환
 //Console.Write(index);
 
-int[] numbers = { 1, 2, 3 };
-Array.Resize(ref numbers, 5); // 배열 크기 변경 (참조로 전달 즉, 원본의 변경을 야기함)
-Console.WriteLine(numbers.Length); // 5
-Console.WriteLine("************");
-foreach (int num in numbers)
-{
-    Console.Write(num + " ");
-}
+//int[] numbers = { 1, 2, 3 };
+//Array.Resize(ref numbers, 5); // 배열 크기 변경 (참조로 전달 즉, 원본의 변경을 야기함)
+//Console.WriteLine(numbers.Length); // 5
+//Console.WriteLine("************");
+//foreach (int num in numbers)
+//{
+//    Console.Write(num + " ");
+//}
+//Console.ReadKey();
+
+
+//string text = "Hello, World!";
+//Console.WriteLine(text.Contains("World")); // 뭔가 이거 DB에서 많이 쓰일지도 포함여부 확인하는걸로
+//Console.WriteLine(text.Equals("hello  world!")); // 대소문자 구분해서 비교
+//Console.WriteLine(text.Equals("hello  world!",StringComparison.InvariantCultureIgnoreCase)); // 대소문자 구분해서 비교
+//Console.WriteLine(text.ToUpper()); 
+//Console.WriteLine(text.ToLower()); 
+
+
+//using ConsoleApp1;
+//using System.ComponentModel.DataAnnotations;
+
+//Car car = new Car();
+
+//Console.WriteLine("자동차 브랜드: " + car.brand);
+//Console.WriteLine("자동차 모델: " + car.model);
+//Console.WriteLine("자동차 색상: " + car.color);
+
+//car.showInfo();
+//Console.WriteLine("*************");
+//Console.WriteLine(car.GetBrand());
+//Console.WriteLine(car.GetModel());
+//Console.WriteLine(car.GetColor());
+//Console.WriteLine("*************");
+//car.showInfo(false, true, false); 
+//Console.WriteLine("*************");
+//car.showInfo("color", "brand");
+
+
+// ref, out 키워드
+
+//void TestRef(ref int x)
+//{
+//    x = x + 10;
+//}
+//void TestOut(out int y)
+//{
+//    y = 20;
+//}
+//int a = 5;
+//TestRef(ref a); // a의 값이 변경됨
+//Console.WriteLine("ref 사용 후 a의 값: " + a); // 15
+//int b;
+//TestOut(out b); // b의 값이 할당됨
+//Console.WriteLine("out 사용 후 b의 값: " + b); // 20
+
+// ref와 out의 차이점
+// ref는 메서드 호출 전에 반드시 초기화가 되어 있어야 하지만 out은 초기화되지 않아도 됨
+
+//string txt = "1";
+
+//bool success = int.TryParse(txt, out int result); // 변환에 성공하면 true, 실패하면 false 반환 
+//if (success)
+//{
+//    Console.WriteLine("변환 성공: " + result);
+//}
+//else
+//{
+//    Console.WriteLine("변환 실패");
+//}
+
+using ConsoleApp1;
+
+Person ps1 = new Person();
+ps1.Name = "홍길동";
+
+// getter, setter 가 자동으로 생성되어서 아래처럼 사용 가능
+Console.WriteLine(ps1.Name);
+
 Console.ReadKey();
