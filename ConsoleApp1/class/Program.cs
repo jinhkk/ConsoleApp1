@@ -481,26 +481,83 @@
 // 상속    불가능                가능
 // 용도    간단한 데이터 그룹화   복잡한 데이터 및 동작 포함
 
-Point point = new Point {  X = 10, Y = 20 };
+//Point point = new Point {  X = 10, Y = 20 };
 
-void ChangePoint(Point p)
+//void ChangePoint(Point p)
+//{
+//    p.X = 30;
+//    p.Y = 40;
+//}
+
+//ChangePoint(point);
+
+//Console.WriteLine(point);
+//Console.ReadKey();
+//struct Point
+//{
+//    public int X { get; set; }
+//    public int Y { get; set; }
+
+//    public override string? ToString()
+//    {
+//        return $"X : {X}, Y: {Y}";
+//    }
+//}
+
+
+// 제네릭
+
+// 클래스, 메서드, 인터페이스 등을 정의할 때 자료형을 일반화하여 다양한 자료형에 대해 재사용할 수 있도록 하는 기능
+// 데이터 타입을 일반화하여 재사용성을 높이고 타입 안정성을 제공하는 기능
+
+//string a = "bbbbbb";
+//string b = "aaaaaa";
+
+//void Swap<T>(ref T a , ref T b)
+//{
+//    T temp = a;
+//    a = b;
+//    b = temp;
+//}
+
+//Swap(ref a, ref b);
+//Console.WriteLine($"a : {a}, b : {b}");
+
+
+// 제네릭 제약 조건
+
+Animal a = new Dog();
+Animal b = new Cat();
+
+void Swap<T>(ref T a, ref T b) 
+    where T : class // struct, new()  // T는 값 형식이어야 하고 매개변수가 없는 생성자가 있어야 함
+
 {
-    p.X = 30;
-    p.Y = 40;
+    T temp = a;
+    a = b;
+    b = temp;
 }
 
-ChangePoint(point);
+Swap(ref a, ref b);
+Console.WriteLine($"a : {a}, b : {b}");
 
-Console.WriteLine(point);
 Console.ReadKey();
-struct Point
-{
-    public int X { get; set; }
-    public int Y { get; set; }
 
-    public override string? ToString()
+
+abstract class Animal
+{
+    abstract public string Name { get; }
+
+    public override string ToString()
     {
-        return $"X : {X}, Y: {Y}";
+        return $"제 이름은 {Name}입니다.";
     }
 }
-
+class Dog : Animal
+{
+    public override string Name => "멍멍이";
+}
+class Cat : Animal
+{
+    public override string Name => "야옹이";
+}
