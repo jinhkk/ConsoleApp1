@@ -526,28 +526,25 @@
 
 // 제네릭 제약 조건
 
-Animal a = new Dog();
-Animal b = new Cat();
 
-void Swap<T>(ref T a, ref T b) 
-    where T : class // struct, new()  // T는 값 형식이어야 하고 매개변수가 없는 생성자가 있어야 함
+T CreateInstance<T>() 
+    where T : Animal, new()// struct, new()  // T는 값 형식이어야 하고 매개변수가 없는 생성자가 있어야 함
 
 {
-    T temp = a;
-    a = b;
-    b = temp;
+    T instance = new T();
+    instance.MakeSound();
+    return instance;
 }
 
-Swap(ref a, ref b);
-Console.WriteLine($"a : {a}, b : {b}");
-
+var animal = CreateInstance<Dog>();
+Console.WriteLine(animal);
 Console.ReadKey();
 
 
 abstract class Animal
 {
     abstract public string Name { get; }
-
+    abstract public void MakeSound();
     public override string ToString()
     {
         return $"제 이름은 {Name}입니다.";
@@ -556,8 +553,18 @@ abstract class Animal
 class Dog : Animal
 {
     public override string Name => "멍멍이";
+
+    public override void MakeSound()
+    {
+        Console.WriteLine("멍멍!");
+    }
 }
 class Cat : Animal
 {
     public override string Name => "야옹이";
+
+    public override void MakeSound()
+    {
+        Console.WriteLine("야옹!");
+    }
 }
