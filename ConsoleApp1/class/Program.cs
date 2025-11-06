@@ -569,4 +569,125 @@
 //    }
 //}
 
+// 대리자
+// 대리자는 특정 메서의 참조를 캡슐화하는 객체
 
+
+//int Plus(int a, int b)
+//{
+//    Console.WriteLine($"a + b = {a + b }");
+//    return a + b;
+//}
+
+
+//int Minus(int a, int b)
+//{
+//    Console.WriteLine($"a - b = {a - b}");
+
+//    return a - b;
+//}
+//Operation operation = Plus;
+//operation += Minus; // 멀티캐스트 대리자
+
+//int result = operation(10, 5);
+
+//Console.WriteLine(result);
+
+//Console.ReadKey();
+
+
+//delegate int Operation(int a, int b);
+
+//Calcuate calc = new Calcuate();
+//calc.OnValueChanged += Calc_OnValueChanged;
+
+//void Calc_OnValueChanged(int result, string message)
+//{
+//    Console.WriteLine($"{message} - 현재 값: {result}");
+//}
+
+//calc.Plue(10);
+//calc.Plue(3);
+//calc.Minus(5);
+//calc.Minus(2);
+
+//Console.ReadKey();
+
+//delegate void ValueChangeHandler(int result, String message);
+
+//class Calcuate
+//{
+//    private int _value;
+//    public event ValueChangeHandler? OnValueChanged;
+
+//    public void Plue(int value)
+//    {
+//        _value += value;
+//        OnValueChanged?.Invoke(_value, $"{value}를 더했습니다.");
+//    }
+
+//    public void Minus(int value)
+//    {
+//        _value -= value;
+//        OnValueChanged?.Invoke(_value, $"{value}를 뺐습니다.");
+//    }
+//}
+
+
+
+// Func 대리자
+// 이거 쓰면 delegate 선언 안해도됨
+// 최대 16개의 매개변수를 가질 수 있고 마지막 매개변수가 반환형
+
+//void ApplyOperation(int a, int b, Func<int, int, int> operation)
+//{
+//    int result = operation(a, b);
+//    Console.WriteLine($"결과: {result}");
+//}
+
+//int Plus(int a, int b)=> a + b;
+//int Minus(int a, int b)=> a - b;
+
+//ApplyOperation(5, 10, Plus);
+//ApplyOperation(5, 10, Minus );
+
+//Console.ReadKey();
+
+//delegate int Operation(int a, int b);
+
+
+// Action 대리자
+
+//void ActionMethod(string s, int i)
+//{
+
+//}
+
+//Action<string, int> action = ActionMethod;
+
+//bool IsGreaterThanZero(int value)
+//{
+//    return value > 0;
+//}
+//Predicate<int> predicate = IsGreaterThanZero; // boolean 반환하는 대리자
+//Console.WriteLine(predicate(10)); // True
+
+//int Compare(int x, int y)
+//{
+//    return x.CompareTo(y);
+//}
+
+
+//Comparison<int> comparison = Compare;
+
+//Console.WriteLine(comparison.Invoke(5, 3));
+//Console.WriteLine(comparison.Invoke(3, 3));
+//Console.WriteLine(comparison.Invoke(1, 3));
+
+// lambda 식
+// Func<int, int, int> add = (x, y) => x + y;
+// Console.WriteLine(add(3, 5));
+
+
+
+Console.ReadKey();
