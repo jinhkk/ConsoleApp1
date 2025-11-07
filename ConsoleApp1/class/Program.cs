@@ -813,31 +813,31 @@ using System.Runtime.CompilerServices;
 //}
 
 
-List<Student> students = [
-  new Student { Id = 1, Age = 20, Gender = "F", Scores = [5, 3, 9], Name = "Alice" },
-  new Student { Id = 2, Age = 22, Gender = "M", Scores = [8, 3, 2], Name = "Bob" },
-  new Student { Id = 3, Age = 23, Gender = "M", Scores = [4, 4, 1], Name = "Charlie" },
-  new Student { Id = 4, Age = 21, Gender = "M", Scores = [5, 6, 2], Name = "David" },
-  new Student { Id = 5, Age = 20, Gender = "F", Scores = [9, 8, 7], Name = "Eve" },
-];
+//List<Student> students = [
+//  new Student { Id = 1, Age = 20, Gender = "F", Scores = [5, 3, 9], Name = "Alice" },
+//  new Student { Id = 2, Age = 22, Gender = "M", Scores = [8, 3, 2], Name = "Bob" },
+//  new Student { Id = 3, Age = 23, Gender = "M", Scores = [4, 4, 1], Name = "Charlie" },
+//  new Student { Id = 4, Age = 21, Gender = "M", Scores = [5, 6, 2], Name = "David" },
+//  new Student { Id = 5, Age = 20, Gender = "F", Scores = [9, 8, 7], Name = "Eve" },
+//];
 
-List<Score> studentScores = [
-  new Score { StudentId = 1, ScoreValue = 5, Subject = "Math" },
-  new Score { StudentId = 1, ScoreValue = 3, Subject = "Science" },
-  new Score { StudentId = 1, ScoreValue = 9, Subject = "History" },
-  new Score { StudentId = 2, ScoreValue = 8, Subject = "Math" },
-  new Score { StudentId = 2, ScoreValue = 3, Subject = "Science" },
-  new Score { StudentId = 2, ScoreValue = 2, Subject = "History" },
-  new Score { StudentId = 3, ScoreValue = 4, Subject = "Math" },
-  new Score { StudentId = 3, ScoreValue = 4, Subject = "Science" },
-  new Score { StudentId = 3, ScoreValue = 1, Subject = "History" },
-  new Score { StudentId = 4, ScoreValue = 5, Subject = "Math" },
-  new Score { StudentId = 4, ScoreValue = 6, Subject = "Science" },
-  new Score { StudentId = 4, ScoreValue = 2, Subject = "History" },
-  new Score { StudentId = 5, ScoreValue = 9, Subject = "Math" },
-  new Score { StudentId = 5, ScoreValue = 8, Subject = "Science" },
-  new Score { StudentId = 5, ScoreValue = 7, Subject = "History" },
-];
+//List<Score> studentScores = [
+//  new Score { StudentId = 1, ScoreValue = 5, Subject = "Math" },
+//  new Score { StudentId = 1, ScoreValue = 3, Subject = "Science" },
+//  new Score { StudentId = 1, ScoreValue = 9, Subject = "History" },
+//  new Score { StudentId = 2, ScoreValue = 8, Subject = "Math" },
+//  new Score { StudentId = 2, ScoreValue = 3, Subject = "Science" },
+//  new Score { StudentId = 2, ScoreValue = 2, Subject = "History" },
+//  new Score { StudentId = 3, ScoreValue = 4, Subject = "Math" },
+//  new Score { StudentId = 3, ScoreValue = 4, Subject = "Science" },
+//  new Score { StudentId = 3, ScoreValue = 1, Subject = "History" },
+//  new Score { StudentId = 4, ScoreValue = 5, Subject = "Math" },
+//  new Score { StudentId = 4, ScoreValue = 6, Subject = "Science" },
+//  new Score { StudentId = 4, ScoreValue = 2, Subject = "History" },
+//  new Score { StudentId = 5, ScoreValue = 9, Subject = "Math" },
+//  new Score { StudentId = 5, ScoreValue = 8, Subject = "Science" },
+//  new Score { StudentId = 5, ScoreValue = 7, Subject = "History" },
+//];
 
 
 //List<Student> newStd = new List<Student>();
@@ -880,30 +880,91 @@ List<Score> studentScores = [
 
 
 
-var result = students.GroupBy(Student => s)
+//var result = students.GroupBy(Student => s)
 
-Console.ReadKey();
-
-
-class Student
-{
-    public int Id { get; set; }
-    public string Name { get; set; } = "";
-    public int Age { get; set; }
-    public string Gender { get; set; } = "";
-    public List<int> Scores { get; set; } = [];
-    public override string ToString()
-    {
-        return $"Id: {Id}, Name: {Name}, Age: {Age}";
-    }
-}
-
-class Score
-{
-    public int StudentId { get; set; }
-    public int ScoreValue { get; set; }
-    public string Subject { get; set; } = "";
-}
+//Console.ReadKey();
 
 
+//class Student
+//{
+//    public int Id { get; set; }
+//    public string Name { get; set; } = "";
+//    public int Age { get; set; }
+//    public string Gender { get; set; } = "";
+//    public List<int> Scores { get; set; } = [];
+//    public override string ToString()
+//    {
+//        return $"Id: {Id}, Name: {Name}, Age: {Age}";
+//    }
+//}
 
+//class Score
+//{
+//    public int StudentId { get; set; }
+//    public int ScoreValue { get; set; }
+//    public string Subject { get; set; } = "";
+//}
+
+
+// ------------------------------------------------------------- 비동기 ----------------------------------------------------------------------------
+
+
+//async, await
+
+//1. async
+// - 메서드, 람다, 익명 메서드에 적용
+// - 반환타입 : Task or Task<T>, 또는 void여야 함
+//2. await
+// - 비동기 작업이 완료될 때 까지 메서드의 실행을 일시 중지
+// - Task and Task<T>와 함께 사용됨.
+// - awiat 뒤에 오는 작업이 완료되면, 나머지 코드 재개.
+
+//예제)
+
+//public async Task<int> GetDataAsync()
+//{
+//    int result = await FetchDataFromDatabaseAsync();
+
+//    return result;
+//}
+
+// Task 와 Task<T>
+// Task
+// 비동기 작업을 나타내는 클래스.
+// 반환 값이 없는 비동기 작업에 사용됨
+
+// Task<T>
+// 비동기 작업의 겨로가를 반환하는 클래스
+// T는 반환된 데이터의 타입을 나타냄
+
+//public async Task PerformOperationAsync()
+//{
+//    await Task.Delay(1000);
+//}
+
+//public async Task<string> GetMessageAsync()
+//{
+//    await Task.Delay(500);
+//    return "Hello, World!";
+//}
+
+//async Task TaskAsync()
+//{
+//    Console.WriteLine("TaskAsync Started");
+//    await Task.Delay(1000);
+//    Console.WriteLine("TaskAsync Finished");
+//}
+
+//async Task TaskAsync2()
+//{
+//    Console.WriteLine("TaskAsync2 Started");
+//    await Task.Delay(1000);
+//    Console.WriteLine("TaskAsync2 Finished");
+//}
+
+//Task task1 = TaskAsync();
+//Task task2 = TaskAsync2();
+
+//await Task.WhenAll(task1, task2); // Task 가 전부 끝날때까지 기다려주는 메서드
+
+//Console.ReadKey();
