@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1;
+using System.Runtime.CompilerServices;
 
 
 //bool isTrue = true;
@@ -688,6 +689,221 @@
 // Func<int, int, int> add = (x, y) => x + y;
 // Console.WriteLine(add(3, 5));
 
+// 열거
 
+//int[] ints = [1, 2, 3];
+
+//foreach(int i in ints)
+//{
+//       Console.WriteLine(i);
+//}
+
+
+
+//var enumerator = GetNumbers();
+
+//while (enumerator.MoveNext())
+//{
+//    Console.WriteLine(enumerator.Current);
+//}
+
+
+
+//Collection collection = new Collection();
+
+
+//foreach (int value in collection)
+//{
+//    Console.WriteLine(value);
+//}
+
+//Console.ReadKey();
+//class Collection
+//{
+
+//}
+
+
+//IEnumerable<int> GetEnumerable()
+//{
+//    yield return 1;
+//    yield return 10;
+//    yield return 20;
+//    yield return 100;
+//    yield return -50;
+//}
+
+//foreach (int num in GetEnumerable())
+//{
+//    Console.WriteLine(num);
+//}
+
+
+//var stringList = new List<string> { "a", "b", "c" };
+//stringList.Insert(1, "z"); // 인덱스 1 위치에 "z" 삽입)
+//List<string> anotherList = ["가", "나", "다"]; // C# 9.0
+
+//stringList.InsertRange(2, anotherList); // 인덱스 2 위치에 anotherList 삽입
+//stringList.AddRange(anotherList); // 리스트 병합
+
+//Console.WriteLine(stringList[1]);
+
+//foreach (string item in stringList)
+//{
+//    Console.WriteLine(item);
+//}
+
+// Contains : 특정 값이 있는지 확인
+// IndexOf : 특정 값의 인덱스 반환
+//stringList.Remove("z"); // 값으로 제거
+//stringList.RemoveAt(0); // 인덱스로 제거
+// Find : 조건에 맞는 첫 번째 요소 반환
+// FindAll : 조건에 맞는 모든 요소 반환
+
+//var fruitList = new List<string> { "apple", "banana", "cherry", "date", "fig", "grape", "lemon", "lime" };
+//bool hasData = fruitList.Contains("Grape", StringComparer.OrdinalIgnoreCase);
+//int index = fruitList.IndexOf("banana");
+//string? selectedFruit = fruitList.Find(fruit =>
+//{
+//    return fruit.StartsWith("c");
+//});
+
+
+//List<string> selectedFruits = fruitList.FindAll(fruit =>
+//{
+//    return fruit.StartsWith("l");
+//});
+//Console.WriteLine(hasData);
+//Console.WriteLine(index);
+//Console.WriteLine(selectedFruit);
+//foreach (string fruit in selectedFruits)
+//{
+//    Console.WriteLine(fruit);
+//};
+
+//var intList = new List<int> { 5, 3, 8, 1, 2 };
+
+//intList.Sort((a, b) => a.CompareTo(b)); // 오름차순 정렬
+//intList.Sort((a, b) => b.CompareTo(a)); // 내림차순 정렬
+
+// Count : 요소의 개수 반환
+// ToArray : 리스트를 배열로 변환
+
+
+// DIc
+
+// Dictionary<key, value> 키, 벨류의 쌍으로 이루어진 컬렉션
+
+//var dic = new Dictionary<string, string>
+//{
+//    { "name", "홍길동" },
+//    { "age", "30" },
+//    { "city", "서울"}};
+
+//// python이랑 비슷함
+
+//dic["name"] = "김철수";
+//bool hasKey = dic.TryGetValue("name", out string? nameV);
+//if (hasKey)
+//{
+//    Console.WriteLine("name : " + nameV);
+//}else
+//{
+//    Console.WriteLine("name 키가 없습니다.");
+//}
+
+
+List<Student> students = [
+  new Student { Id = 1, Age = 20, Gender = "F", Scores = [5, 3, 9], Name = "Alice" },
+  new Student { Id = 2, Age = 22, Gender = "M", Scores = [8, 3, 2], Name = "Bob" },
+  new Student { Id = 3, Age = 23, Gender = "M", Scores = [4, 4, 1], Name = "Charlie" },
+  new Student { Id = 4, Age = 21, Gender = "M", Scores = [5, 6, 2], Name = "David" },
+  new Student { Id = 5, Age = 20, Gender = "F", Scores = [9, 8, 7], Name = "Eve" },
+];
+
+List<Score> studentScores = [
+  new Score { StudentId = 1, ScoreValue = 5, Subject = "Math" },
+  new Score { StudentId = 1, ScoreValue = 3, Subject = "Science" },
+  new Score { StudentId = 1, ScoreValue = 9, Subject = "History" },
+  new Score { StudentId = 2, ScoreValue = 8, Subject = "Math" },
+  new Score { StudentId = 2, ScoreValue = 3, Subject = "Science" },
+  new Score { StudentId = 2, ScoreValue = 2, Subject = "History" },
+  new Score { StudentId = 3, ScoreValue = 4, Subject = "Math" },
+  new Score { StudentId = 3, ScoreValue = 4, Subject = "Science" },
+  new Score { StudentId = 3, ScoreValue = 1, Subject = "History" },
+  new Score { StudentId = 4, ScoreValue = 5, Subject = "Math" },
+  new Score { StudentId = 4, ScoreValue = 6, Subject = "Science" },
+  new Score { StudentId = 4, ScoreValue = 2, Subject = "History" },
+  new Score { StudentId = 5, ScoreValue = 9, Subject = "Math" },
+  new Score { StudentId = 5, ScoreValue = 8, Subject = "Science" },
+  new Score { StudentId = 5, ScoreValue = 7, Subject = "History" },
+];
+
+
+//List<Student> newStd = new List<Student>();
+
+//foreach (Student std in students)
+//{
+//    if (std.Age > 21)
+//    {
+//        newStd.Add(std);
+//    }
+//}
+
+//foreach (Student std in newStd)
+//{
+//    Console.WriteLine(std);
+//}
+
+// 위와 아래의 결과는 같으나 표현식의 차이로 인해 가독성이 다름
+
+//var newStudents = from student in students
+//                  where student.Age > 21
+//                  select student;
+//foreach(Student std in newStudents)
+//{
+//    Console.WriteLine(std);
+//}  
+
+//var students2 = from student in students
+//                let average = student.Scores.Average()
+//                where average > 3
+//                orderby student.Age, average descending
+//                //let gender = student.Gender
+//                //where gender == "M"
+//                select (MyName: student.Name, student.Age, Average: average);
+
+//foreach (var result in students2)
+//{
+//    Console.WriteLine($"{result.MyName}, {result.Age}, Average : {result.Average}");
+//}
+
+
+
+var result = students.GroupBy(Student => s)
 
 Console.ReadKey();
+
+
+class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = "";
+    public int Age { get; set; }
+    public string Gender { get; set; } = "";
+    public List<int> Scores { get; set; } = [];
+    public override string ToString()
+    {
+        return $"Id: {Id}, Name: {Name}, Age: {Age}";
+    }
+}
+
+class Score
+{
+    public int StudentId { get; set; }
+    public int ScoreValue { get; set; }
+    public string Subject { get; set; } = "";
+}
+
+
+
